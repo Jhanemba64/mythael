@@ -1,0 +1,110 @@
+{
+  "metadata": {
+    "title": "Mythael — Creations Fantasy Artisanales",
+    "description": "Figurines, bijoux et accessoires fantasy faits main par des artisans passionnes. Chaque piece raconte une histoire."
+  },
+  "nav": {
+    "home": "Accueil",
+    "shop": "Boutique",
+    "ourStory": "Notre Histoire",
+    "faq": "FAQ",
+    "cart": "Panier",
+    "account": "Mon Compte",
+    "login": "Connexion",
+    "register": "Inscription",
+    "logout": "Deconnexion"
+  },
+  "home": {
+    "hero": {
+      "title": "Creations forgees par la passion",
+      "subtitle": "Des artisans independants donnent vie a l'imaginaire, une piece a la fois.",
+      "cta": "Decouvrir la collection"
+    },
+    "featured": {
+      "title": "Pieces d'exception",
+      "subtitle": "Selectionnees pour leur beaute et leur histoire unique"
+    },
+    "categories": {
+      "title": "Nos Univers",
+      "jewelry": "Bijoux",
+      "figurines": "Figurines",
+      "tabletop": "Accessoires JDR"
+    },
+    "story": {
+      "title": "Nes de la passion",
+      "text": "Derriere chaque creation se cache un artisan qui, le soir venu, donne vie a ses reves. Mythael est ne pour partager ces oeuvres avec le monde.",
+      "cta": "Decouvrir notre histoire"
+    }
+  },
+  "shop": {
+    "title": "La Collection",
+    "allCategories": "Toutes",
+    "addToCart": "Ajouter au panier",
+    "outOfStock": "Rupture de stock",
+    "onlyLeft": "Plus que {count} en stock",
+    "filters": "Filtres"
+  },
+  "product": {
+    "addToCart": "Ajouter au panier",
+    "description": "Description",
+    "reviews": "Avis",
+    "noReviews": "Aucun avis pour le moment",
+    "writeReview": "Laisser un avis",
+    "handmadeNotice": "Piece artisanale — de legeres variations rendent chaque creation unique."
+  },
+  "cart": {
+    "title": "Votre Panier",
+    "empty": "Votre panier est vide",
+    "continueShopping": "Continuer vos achats",
+    "subtotal": "Sous-total",
+    "shipping": "Livraison",
+    "freeShipping": "Offerte",
+    "total": "Total",
+    "checkout": "Passer la commande",
+    "remove": "Retirer"
+  },
+  "checkout": {
+    "title": "Finaliser la commande",
+    "success": {
+      "title": "Merci pour votre commande !",
+      "message": "Vous recevrez un email de confirmation sous peu.",
+      "backToShop": "Retour a la boutique"
+    }
+  },
+  "account": {
+    "title": "Mon Compte",
+    "orders": "Mes Commandes",
+    "noOrders": "Aucune commande pour le moment",
+    "orderStatus": {
+      "pending": "En attente",
+      "paid": "Payee",
+      "shipped": "Expediee",
+      "delivered": "Livree"
+    }
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "Inscription",
+    "email": "Email",
+    "password": "Mot de passe",
+    "firstName": "Prenom",
+    "lastName": "Nom",
+    "noAccount": "Pas encore de compte ?",
+    "hasAccount": "Deja un compte ?",
+    "createAccount": "Creer un compte",
+    "loginAction": "Se connecter"
+  },
+  "footer": {
+    "rights": "Tous droits reserves",
+    "terms": "CGV",
+    "privacy": "Confidentialite",
+    "returns": "Retours",
+    "tagline": "Forge par la passion, inspire par l'imaginaire."
+  },
+  "trust": {
+    "securePayment": "Paiement securise",
+    "handmade": "Fait main",
+    "uniquePieces": "Pieces uniques",
+    "freeShipping": "Livraison offerte"
+  }
+}
