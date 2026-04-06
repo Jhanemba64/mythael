@@ -1,36 +1,181 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mythael — Handcrafted Fantasy Creations
 
-## Getting Started
+Site e-commerce dropshipping fantasy. Figurines, bijoux et accessoires JDR "artisanaux" — produits sourced depuis AliExpress.
 
-First, run the development server:
+**Production** : https://mythael.vercel.app
+
+---
+
+## Stack technique
+
+| Tech | Usage |
+|------|-------|
+| Next.js 16 | Framework (App Router) |
+| shadcn/ui + Tailwind CSS | Composants UI + styling |
+| Neon | Base de donnees PostgreSQL serverless |
+| Drizzle ORM | ORM TypeScript |
+| Stripe | Paiement (mode hosted checkout) |
+| Resend | Emails transactionnels |
+| Vercel Blob | Stockage images |
+| next-intl | Internationalisation FR/EN |
+| jose + bcryptjs | Auth (JWT cookies) |
+
+---
+
+## Installation locale
 
 ```bash
+# Cloner le repo
+git clone https://github.com/Jhanemba64/mythael.git
+cd mythael
+
+# Installer les dependances
+npm install
+
+# Copier les variables d'environnement
+cp .env.local.example .env.local
+# Remplir les valeurs dans .env.local (voir section ci-dessous)
+
+# Pousser le schema vers la BDD
+npx drizzle-kit push
+
+# Injecter les produits (11 produits + 3 categories)
+npx tsx src/db/seed.ts
+
+# Lancer le serveur de dev
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Le site est accessible sur http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Variables d'environnement (.env.local)
 
-## Learn More
+```env
+# Database — Neon PostgreSQL
+DATABASE_URL=postgresql://user:pass@ep-xxx.region.aws.neon.tech/neondb?sslmode=require
 
-To learn more about Next.js, take a look at the following resources:
+# Stripe
+STRIPE_SECRET_KEY=sk_test_...
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
+STRIPE_WEBHOOK_SECRET=whsec_...
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Resend (emails)
+RESEND_API_KEY=re_...
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Admin
+ADMIN_PASSWORD=mythael-admin-2026
+ADMIN_JWT_SECRET=une-chaine-aleatoire-longue
 
-## Deploy on Vercel
+# Vercel Blob (images upload)
+BLOB_READ_WRITE_TOKEN=
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# URL du site
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Commandes utiles
+
+```bash
+# Dev
+npm run dev                    # Lancer le serveur de dev
+npm run build                  # Build de production
+npm run start                  # Lancer le build en local
+
+# Base de donnees
+npx drizzle-kit push           # Appliquer le schema a la BDD
+npx drizzle-kit studio         # Ouvrir Drizzle Studio (GUI BDD)
+npx tsx src/db/seed.ts         # Re-injecter les donnees (TRUNCATE + seed)
+
+# Git workflow
+git checkout dev               # Travailler sur dev
+git checkout preprod            # Merger dev -> preprod pour tester
+git merge dev
+git checkout main               # Merger preprod -> main pour deployer
+git merge preprod
+git push                        # Vercel deploie automatiquement depuis main
+```
+
+---
+
+## Branches
+
+| Branche | Usage |
+|---------|-------|
+| `dev` | Developpement quotidien |
+| `preprod` | Tests avant mise en production |
+| `main` | Production — Vercel deploie automatiquement |
+
+---
+
+## Structure du projet
+
+```
+src/
+├── app/
+│   ├── [locale]/          # Pages publiques FR/EN (shop, cart, checkout, account...)
+│   ├── admin/             # Panel admin (dashboard, produits, commandes)
+│   ├── api/               # Routes API (checkout, webhook Stripe, upload)
+│   └── actions/           # Server actions (auth, produits, commandes)
+├── components/
+│   ├── ui/                # Composants shadcn/ui
+│   ├── layout/            # Header, Footer, LocaleSwitcher
+│   ├── shop/              # ProductCard, CategoryFilter, AddToCart
+│   ├── cart/              # CartProvider, CartSheet
+│   └── shared/            # HeroBackground, ForestBackground, AmbientPlayer
+├── db/
+│   ├── schema.ts          # Schema Drizzle (tables)
+│   ├── index.ts           # Connexion BDD
+│   └── seed.ts            # Donnees initiales
+├── i18n/                  # Config next-intl (routing, navigation)
+├── lib/                   # Clients Stripe, Resend, auth
+└── messages/              # Traductions FR/EN (JSON)
+```
+
+---
+
+## Admin
+
+- URL : `/admin/login`
+- Mot de passe : defini dans `ADMIN_PASSWORD`
+- Dashboard : stats, revenus, commandes recentes
+- Produits : CRUD, upload images
+- Commandes : voir details, marquer comme expedie (envoie email tracking)
+
+---
+
+## Paiement test
+
+- Carte : `4242 4242 4242 4242`
+- Date : n'importe quelle date future
+- CVC : `123`
+
+## Passer en production (vrai argent)
+
+1. Activer le compte Stripe (identite, IBAN)
+2. Remplacer les cles `sk_test_`/`pk_test_` par `sk_live_`/`pk_live_`
+3. Creer un webhook live sur Stripe avec l'URL `https://mythael.vercel.app/api/webhooks/stripe`
+4. Configurer Resend (verifier le domaine, ajouter `RESEND_API_KEY`)
+5. Acheter et connecter le domaine mythael.com
+
+---
+
+## Fournisseurs AliExpress
+
+Les liens d'achat sont dans `src/db/seed.ts` en commentaires a cote de chaque produit. Flux :
+
+1. Client passe commande sur Mythael
+2. Tu recois la notification dans `/admin/orders`
+3. Tu commandes le produit sur AliExpress avec l'adresse du client
+4. AliExpress livre directement chez le client
+5. Tu marques la commande comme expediee dans l'admin (email tracking envoye)
+
+---
+
+## Musique
+
+Musique d'ambiance : "Ravi de te revoir" par YannZ — Licence CC-BY 4.0
+https://yannz41.itch.io
