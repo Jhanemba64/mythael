@@ -4,7 +4,7 @@ import Stripe from "stripe";
 export const maxDuration = 30;
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  timeout: 30000,
+  httpClient: Stripe.createFetchHttpClient(),
   maxNetworkRetries: 3,
 });
 
