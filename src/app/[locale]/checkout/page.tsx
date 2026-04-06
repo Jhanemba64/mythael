@@ -49,11 +49,11 @@ export default function CheckoutPage() {
       if (result.url) {
         window.location.href = result.url;
       } else {
-        setError("Payment initialization failed.");
+        setError(result.error || "Payment initialization failed.");
         setLoading(false);
       }
-    } catch {
-      setError("Payment initialization failed. Please try again.");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Payment initialization failed.");
       setLoading(false);
     }
   }
