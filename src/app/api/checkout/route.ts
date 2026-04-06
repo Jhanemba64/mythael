@@ -11,7 +11,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 export async function POST(req: NextRequest) {
   try {
     const { items, locale } = await req.json();
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+    const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").trim().replace(/\/+$/, "");
 
     const lineItems = items.map(
       (item: { nameFr: string; nameEn: string; price: string; quantity: number }) => ({
@@ -26,6 +26,9 @@ export async function POST(req: NextRequest) {
       })
     );
 
+    console.log("[Checkout API] siteUrl:", siteUrl);
+    console.log("[Checkout API] success_url:", `${siteUrl}/${locale}/checkout/success?session_id={CHECKOUT_SESSION_ID}`);
+
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       line_items: lineItems,
@@ -35,14 +38,15 @@ export async function POST(req: NextRequest) {
           "GB", "IE", "US", "CA",
         ],
       },
-      success_url: `${siteUrl}/${locale}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${siteUrl}/${locale}/cart`,
+      success_url: siteUrl + "/" + locale + "/checkout/success?session_id={CHECKOUT_SESSION_ID}",
+      cancel_url: siteUrl + "/" + locale + "/cart",
       metadata: {
         locale,
         itemIds: items.map((i: { id: number }) => i.id).join(","),
       },
     });
 
+    console.log("[Checkout API] session.id:", session.id, "session.url:", session.url);
     return NextResponse.json({ url: session.url });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error";
