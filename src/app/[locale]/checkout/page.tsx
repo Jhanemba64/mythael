@@ -2,7 +2,6 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import { useCart } from "@/components/cart/cart-provider";
-import { createCheckoutSession } from "@/app/actions/checkout";
 import { Link } from "@/i18n/navigation";
 import { ShoppingBag, Loader2 } from "lucide-react";
 import { useState } from "react";
@@ -44,7 +43,13 @@ export default function CheckoutPage() {
         quantity: item.quantity,
       }));
 
-      const result = await createCheckoutSession(cartItems, locale);
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items: cartItems, locale }),
+      });
+
+      const result = await res.json();
 
       if (result.url) {
         window.location.href = result.url;
