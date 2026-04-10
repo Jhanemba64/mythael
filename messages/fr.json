@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Mythael — Creations Fantasy Artisanales",
-    "description": "Figurines, bijoux et accessoires fantasy faits main par des artisans passionnes. Chaque piece raconte une histoire."
+    "title": "Mythael — Fantasy d'Exception",
+    "description": "Figurines, bijoux et accessoires inspires des mondes fantastiques. Chaque piece raconte une histoire."
   },
   "nav": {
     "home": "Accueil",
@@ -16,8 +16,8 @@
   },
   "home": {
     "hero": {
-      "title": "Creations forgees par la passion",
-      "subtitle": "Des artisans independants donnent vie a l'imaginaire, une piece a la fois.",
+      "title": "L'imaginaire prend forme",
+      "subtitle": "Des creations fantasy selectionnees avec passion, une piece a la fois.",
       "cta": "Decouvrir la collection"
     },
     "featured": {
@@ -32,7 +32,7 @@
     },
     "story": {
       "title": "Nes de la passion",
-      "text": "Derriere chaque creation se cache un artisan qui, le soir venu, donne vie a ses reves. Mythael est ne pour partager ces oeuvres avec le monde.",
+      "text": "Mythael est ne d'une passion pour les mondes fantastiques et le desir de rendre leur magie accessible. Nous denichons des pieces uniques pour les amoureux de fantasy.",
       "cta": "Decouvrir notre histoire"
     }
   },
@@ -50,7 +50,7 @@
     "reviews": "Avis",
     "noReviews": "Aucun avis pour le moment",
     "writeReview": "Laisser un avis",
-    "handmadeNotice": "Piece artisanale — de legeres variations rendent chaque creation unique."
+    "productNotice": "Chaque piece est inspectee et selectionnee pour sa qualite. De legeres variations peuvent exister et rendent chaque exemplaire unique."
   },
   "cart": {
     "title": "Votre Panier",
@@ -99,12 +99,13 @@
     "terms": "CGV",
     "privacy": "Confidentialite",
     "returns": "Retours",
-    "tagline": "Forge par la passion, inspire par l'imaginaire."
+    "tagline": "Inspire par l'imaginaire, guide par la passion."
   },
   "trust": {
     "securePayment": "Paiement securise",
-    "handmade": "Fait main",
+    "curatedSelection": "Selection exigeante",
     "uniquePieces": "Pieces uniques",
+    "dataProtection": "Donnees protegees (RGPD)",
     "freeShipping": "Livraison offerte"
   }
 }

@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Mythael — Handcrafted Fantasy Creations",
-    "description": "Artisan-made figurines, fantasy jewelry, and tabletop accessories. Each piece tells a story, forged with passion by independent creators."
+    "title": "Mythael — Fantasy of Distinction",
+    "description": "Figurines, fantasy jewelry, and tabletop accessories inspired by fantastical worlds. Each piece tells a story."
   },
   "nav": {
     "home": "Home",
@@ -16,8 +16,8 @@
   },
   "home": {
     "hero": {
-      "title": "Creations forged by passion",
-      "subtitle": "Independent artisans bring imagination to life, one piece at a time.",
+      "title": "Imagination takes shape",
+      "subtitle": "Fantasy creations curated with passion, one piece at a time.",
       "cta": "Discover the collection"
     },
     "featured": {
@@ -32,7 +32,7 @@
     },
     "story": {
       "title": "Born from passion",
-      "text": "Behind every creation is an artisan who, when evening comes, breathes life into their dreams. Mythael was born to share these works with the world.",
+      "text": "Mythael was born from a love for fantastical worlds and the desire to make their magic accessible. We seek out unique pieces for fantasy lovers everywhere.",
       "cta": "Discover our story"
     }
   },
@@ -50,7 +50,7 @@
     "reviews": "Reviews",
     "noReviews": "No reviews yet",
     "writeReview": "Write a review",
-    "handmadeNotice": "Handcrafted piece — slight variations make each creation unique."
+    "productNotice": "Each piece is inspected and selected for quality. Slight variations may exist and make each item unique."
   },
   "cart": {
     "title": "Your Cart",
@@ -99,12 +99,13 @@
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy",
     "returns": "Returns",
-    "tagline": "Forged by passion, inspired by imagination."
+    "tagline": "Inspired by imagination, driven by passion."
   },
   "trust": {
     "securePayment": "Secure Payment",
-    "handmade": "Handmade",
+    "curatedSelection": "Curated Selection",
     "uniquePieces": "Unique Pieces",
+    "dataProtection": "GDPR Protected",
     "freeShipping": "Free Shipping"
   }
 }

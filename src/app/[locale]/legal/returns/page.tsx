@@ -10,7 +10,7 @@ const content = {
       },
       {
         heading: "Conditions de retour",
-        text: "L'article doit etre retourne dans son emballage d'origine, non utilise et en parfait etat. Les articles personnalises ou sur mesure ne peuvent pas etre retournes sauf defaut de fabrication.",
+        text: "L'article doit etre retourne dans son emballage d'origine, non utilise et en parfait etat. Les articles personnalises ne peuvent pas etre retournes sauf en cas de defaut.",
       },
       {
         heading: "Procedure",
@@ -35,7 +35,7 @@ const content = {
       },
       {
         heading: "Return conditions",
-        text: "The item must be returned in its original packaging, unused and in perfect condition. Personalized or custom-made items cannot be returned except for manufacturing defects.",
+        text: "The item must be returned in its original packaging, unused and in perfect condition. Personalized items cannot be returned except for defects.",
       },
       {
         heading: "Procedure",

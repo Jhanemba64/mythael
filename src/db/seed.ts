@@ -38,9 +38,9 @@ async function seed() {
         nameFr: "Figurines",
         nameEn: "Figurines",
         descriptionFr:
-          "Creatures mythiques et gardiens anciens, sculptes en resine et peints a la main avec une attention meticuleuse.",
+          "Creatures mythiques et gardiens anciens en resine detaillee, selectionnes pour la richesse de leurs finitions.",
         descriptionEn:
-          "Mythical creatures and ancient guardians, sculpted in resin and hand-painted with meticulous attention.",
+          "Mythical creatures and ancient guardians in detailed resin, selected for the richness of their finish.",
       },
       {
         slug: "tabletop",

@@ -1,7 +1,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ProductCard } from "@/components/shop/product-card";
-import { Shield, Sparkles, Gem, Truck } from "lucide-react";
+import { Shield, Sparkles, Gem, Truck, Lock } from "lucide-react";
 import { HeroBackground } from "@/components/shared/hero-background";
 import { AmbientPlayer } from "@/components/shared/ambient-player";
 import { db } from "@/db";
@@ -89,10 +89,11 @@ function HomePageClient({
 
       {/* ── Trust Badges ──────────────────────────────────── */}
       <section className="border-y border-border/30 bg-card/50">
-        <div className="mx-auto grid max-w-4xl grid-cols-2 gap-6 px-4 py-8 md:grid-cols-4">
+        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-6 px-4 py-8 md:grid-cols-5">
           {[
             { icon: Shield, label: tTrust("securePayment") },
-            { icon: Sparkles, label: tTrust("handmade") },
+            { icon: Sparkles, label: tTrust("curatedSelection") },
+            { icon: Lock, label: tTrust("dataProtection") },
             { icon: Gem, label: tTrust("uniquePieces") },
             { icon: Truck, label: tTrust("freeShipping") },
           ].map(({ icon: Icon, label }) => (
