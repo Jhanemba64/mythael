@@ -23,6 +23,7 @@ export default function LoginPage() {
     const result = await loginAction(formData);
 
     if (result.success) {
+      window.dispatchEvent(new Event("auth-change"));
       router.push("/account");
     } else {
       setError(result.error || "Error");
