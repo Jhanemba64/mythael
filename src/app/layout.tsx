@@ -14,9 +14,9 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
-  title: "Mythael — Handcrafted Fantasy Creations",
+  title: "Mythael — Fantasy Creations of Distinction",
   description:
-    "Artisan-made figurines, fantasy jewelry, and tabletop accessories. Each piece tells a story, forged with passion by independent creators.",
+    "Figurines, fantasy jewelry, and tabletop accessories inspired by fantastical worlds. Each piece tells a story.",
 };
 
 export default function RootLayout({

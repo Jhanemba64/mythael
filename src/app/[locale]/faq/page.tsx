@@ -6,8 +6,8 @@ const faq = {
     title: "Questions Frequentes",
     items: [
       {
-        q: "Vos creations sont-elles vraiment faites main ?",
-        a: "Oui. Chaque piece est concue, sculptee, assemblee ou peinte a la main par l'un de nos trois artisans. C'est pourquoi de legeres variations peuvent exister entre deux exemplaires — c'est ce qui rend chaque objet unique.",
+        q: "Comment selectionnez-vous vos produits ?",
+        a: "Chaque piece est choisie avec soin pour sa qualite, ses details et son inspiration fantasy. Nous recherchons des creations qui racontent une histoire et transportent dans un autre univers. De legeres variations peuvent exister entre deux exemplaires — c'est ce qui rend chaque objet unique.",
       },
       {
         q: "Quels sont les delais de livraison ?",
@@ -22,8 +22,8 @@ const faq = {
         a: "Vous disposez de 14 jours apres reception pour nous retourner un article dans son emballage d'origine. Consultez notre politique de retour pour plus de details.",
       },
       {
-        q: "Acceptez-vous les commandes personnalisees ?",
-        a: "Nous acceptons certaines demandes de personnalisation selon la disponibilite de nos artisans. Contactez-nous par email pour en discuter.",
+        q: "Puis-je faire une demande speciale ?",
+        a: "Nous sommes a l'ecoute de vos envies. Contactez-nous par email a contact@mythael.com pour discuter de votre demande — nous ferons notre possible pour y repondre.",
       },
       {
         q: "Comment entretenez-vous les figurines en resine ?",
@@ -33,14 +33,18 @@ const faq = {
         q: "Le paiement est-il securise ?",
         a: "Absolument. Nous utilisons Stripe, un leader mondial du paiement en ligne. Vos donnees bancaires ne transitent jamais par nos serveurs.",
       },
+      {
+        q: "Comment protegez-vous mes donnees personnelles ?",
+        a: "Votre vie privee est une priorite. Nous sommes conformes au RGPD (Reglement General sur la Protection des Donnees). Nous ne collectons que les informations strictement necessaires a vos commandes, nous ne vendons jamais vos donnees, et vos paiements sont securises par Stripe (certifie PCI DSS niveau 1). Vous pouvez a tout moment acceder, modifier ou supprimer vos donnees en nous contactant. Consultez notre politique de confidentialite pour tous les details.",
+      },
     ],
   },
   en: {
     title: "Frequently Asked Questions",
     items: [
       {
-        q: "Are your creations truly handmade?",
-        a: "Yes. Each piece is designed, sculpted, assembled, or painted by hand by one of our three artisans. That's why slight variations may exist between two copies — it's what makes each object unique.",
+        q: "How do you select your products?",
+        a: "Each piece is carefully chosen for its quality, detail, and fantasy inspiration. We seek out creations that tell a story and transport you to another world. Slight variations may exist between two copies — it's what makes each object unique.",
       },
       {
         q: "What are the delivery times?",
@@ -55,8 +59,8 @@ const faq = {
         a: "You have 14 days after receipt to return an item in its original packaging. Please check our return policy for more details.",
       },
       {
-        q: "Do you accept custom orders?",
-        a: "We accept certain customization requests depending on our artisans' availability. Contact us by email to discuss.",
+        q: "Can I make a special request?",
+        a: "We're always happy to hear your ideas. Contact us by email at contact@mythael.com to discuss your request — we'll do our best to accommodate it.",
       },
       {
         q: "How do you care for resin figurines?",
@@ -65,6 +69,10 @@ const faq = {
       {
         q: "Is the payment secure?",
         a: "Absolutely. We use Stripe, a world leader in online payments. Your banking data never passes through our servers.",
+      },
+      {
+        q: "How do you protect my personal data?",
+        a: "Your privacy is a priority. We are fully GDPR compliant (General Data Protection Regulation). We only collect information strictly necessary for your orders, we never sell your data, and your payments are secured by Stripe (PCI DSS Level 1 certified). You can access, modify, or delete your data at any time by contacting us. See our privacy policy for full details.",
       },
     ],
   },

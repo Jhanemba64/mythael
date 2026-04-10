@@ -10,7 +10,7 @@ const content = {
       },
       {
         heading: "2. Produits",
-        text: "Les produits proposes sont des creations artisanales. Des variations mineures entre les photos et le produit recu sont inherentes au caractere fait-main de nos creations et ne constituent pas un defaut.",
+        text: "Les produits proposes sont inspires de l'univers fantasy et selectionnes pour leur qualite. Des variations mineures entre les photos et le produit recu peuvent exister et ne constituent pas un defaut.",
       },
       {
         heading: "3. Prix",
@@ -33,8 +33,8 @@ const content = {
         text: "Conformement a la legislation en vigueur, vous disposez d'un delai de 14 jours a compter de la reception de votre commande pour exercer votre droit de retractation. Les produits doivent etre retournes dans leur emballage d'origine, en parfait etat.",
       },
       {
-        heading: "8. Donnees personnelles",
-        text: "Les informations collectees sont necessaires au traitement de votre commande. Elles sont traitees conformement a notre politique de confidentialite.",
+        heading: "8. Protection des donnees personnelles",
+        text: "Les informations collectees sont necessaires au traitement de votre commande. Elles sont traitees conformement au Reglement General sur la Protection des Donnees (RGPD) et a notre politique de confidentialite. Vos donnees de paiement sont gerees par Stripe (certifie PCI DSS niveau 1) et ne sont jamais stockees sur nos serveurs. Vous disposez d'un droit d'acces, de rectification et de suppression de vos donnees. Consultez notre politique de confidentialite pour plus de details.",
       },
     ],
   },
@@ -47,7 +47,7 @@ const content = {
       },
       {
         heading: "2. Products",
-        text: "The products offered are handcrafted creations. Minor variations between photos and the received product are inherent to the handmade nature of our creations and do not constitute a defect.",
+        text: "The products offered are fantasy-inspired and selected for quality. Minor variations between photos and the received product may occur and do not constitute a defect.",
       },
       {
         heading: "3. Prices",
@@ -70,8 +70,8 @@ const content = {
         text: "In accordance with current legislation, you have 14 days from receiving your order to exercise your right of withdrawal. Products must be returned in their original packaging, in perfect condition.",
       },
       {
-        heading: "8. Personal data",
-        text: "The information collected is necessary for processing your order. It is processed in accordance with our privacy policy.",
+        heading: "8. Personal data protection",
+        text: "The information collected is necessary for processing your order. It is processed in accordance with the General Data Protection Regulation (GDPR) and our privacy policy. Your payment data is handled by Stripe (PCI DSS Level 1 certified) and is never stored on our servers. You have the right to access, rectify, and delete your data. See our privacy policy for full details.",
       },
     ],
   },

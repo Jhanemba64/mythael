@@ -102,11 +102,11 @@ function ProductPageClient({ product }: { product: Product }) {
             <AddToCartButton product={product} />
           </div>
 
-          {/* Handmade notice */}
+          {/* Product notice */}
           <div className="mt-4 flex items-start gap-2 rounded-md border border-border/50 bg-card/50 p-3">
             <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
             <p className="text-xs leading-relaxed text-muted-foreground">
-              {t("handmadeNotice")}
+              {t("productNotice")}
             </p>
           </div>
 
