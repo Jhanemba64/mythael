@@ -170,6 +170,36 @@ export function ProductForm({ categories, product }: Props) {
         </div>
       </div>
 
+      {/* Supplier info (admin only — never shown to customers) */}
+      <div className="rounded-lg border border-border/50 bg-card/50 p-4 space-y-4">
+        <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Supplier (internal)</p>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <Label htmlFor="supplierUrl">AliExpress URL</Label>
+            <Input
+              id="supplierUrl"
+              name="supplierUrl"
+              type="url"
+              placeholder="https://aliexpress.com/item/..."
+              defaultValue={product?.supplierUrl || ""}
+              className="bg-card"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="supplierCost">Supplier Cost (EUR)</Label>
+            <Input
+              id="supplierCost"
+              name="supplierCost"
+              type="number"
+              step="0.01"
+              placeholder="0.00"
+              defaultValue={product?.supplierCost || ""}
+              className="bg-card"
+            />
+          </div>
+        </div>
+      </div>
+
       <div className="flex items-center gap-2">
         <input
           type="checkbox"

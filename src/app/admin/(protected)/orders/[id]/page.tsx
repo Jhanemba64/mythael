@@ -15,7 +15,7 @@ async function getOrder(id: number) {
   try {
     const order = await db.query.orders.findFirst({
       where: eq(orders.id, id),
-      with: { items: true },
+      with: { items: { with: { product: true } } },
     });
     return order;
   } catch {
@@ -93,19 +93,38 @@ export default async function AdminOrderDetailPage({ params }: Props) {
         {order.items.map((item) => (
           <div
             key={item.id}
-            className="flex items-center justify-between rounded-md border border-border/50 bg-card px-4 py-2"
+            className="rounded-md border border-border/50 bg-card px-4 py-3"
           >
-            <div>
-              <p className="text-sm font-medium text-foreground">
-                {item.productName}
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Qty: {item.quantity}
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-foreground">
+                  {item.productName}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Qty: {item.quantity}
+                </p>
+              </div>
+              <p className="text-sm font-medium">
+                {(parseFloat(item.unitPrice) * item.quantity).toFixed(2)} EUR
               </p>
             </div>
-            <p className="text-sm font-medium">
-              {(parseFloat(item.unitPrice) * item.quantity).toFixed(2)} EUR
-            </p>
+            {item.product?.supplierUrl && (
+              <div className="mt-2 flex items-center gap-3 border-t border-border/30 pt-2">
+                <a
+                  href={item.product.supplierUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-primary hover:underline"
+                >
+                  Order on AliExpress &rarr;
+                </a>
+                {item.product.supplierCost && (
+                  <span className="text-xs text-muted-foreground">
+                    Cost: {item.product.supplierCost} EUR &middot; Margin: {(parseFloat(item.unitPrice) - parseFloat(item.product.supplierCost)).toFixed(2)} EUR
+                  </span>
+                )}
+              </div>
+            )}
           </div>
         ))}
       </div>

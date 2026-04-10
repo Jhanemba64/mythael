@@ -16,6 +16,8 @@ const productSchema = z.object({
   price: z.string().min(1),
   compareAtPrice: z.string().optional(),
   stock: z.coerce.number().int().min(0),
+  supplierUrl: z.string().optional(),
+  supplierCost: z.string().optional(),
   featured: z.boolean().default(false),
 });
 
@@ -30,6 +32,8 @@ export async function createProductAction(formData: FormData) {
     price: formData.get("price"),
     compareAtPrice: formData.get("compareAtPrice") || undefined,
     stock: formData.get("stock"),
+    supplierUrl: formData.get("supplierUrl") || undefined,
+    supplierCost: formData.get("supplierCost") || undefined,
     featured: formData.get("featured") === "on",
   });
 
@@ -40,6 +44,8 @@ export async function createProductAction(formData: FormData) {
   try {
     await db.insert(products).values({
       ...parsed.data,
+      supplierUrl: parsed.data.supplierUrl || null,
+      supplierCost: parsed.data.supplierCost || null,
       images: [],
     });
     revalidatePath("/admin/products");
@@ -60,6 +66,8 @@ export async function updateProductAction(id: number, formData: FormData) {
     price: formData.get("price"),
     compareAtPrice: formData.get("compareAtPrice") || undefined,
     stock: formData.get("stock"),
+    supplierUrl: formData.get("supplierUrl") || undefined,
+    supplierCost: formData.get("supplierCost") || undefined,
     featured: formData.get("featured") === "on",
   });
 
@@ -70,7 +78,11 @@ export async function updateProductAction(id: number, formData: FormData) {
   try {
     await db
       .update(products)
-      .set(parsed.data)
+      .set({
+        ...parsed.data,
+        supplierUrl: parsed.data.supplierUrl || null,
+        supplierCost: parsed.data.supplierCost || null,
+      })
       .where(eq(products.id, id));
     revalidatePath("/admin/products");
     revalidatePath(`/admin/products/${id}`);

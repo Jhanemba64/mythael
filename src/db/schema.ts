@@ -38,6 +38,8 @@ export const products = pgTable("products", {
   compareAtPrice: numeric("compare_at_price", { precision: 10, scale: 2 }),
   stock: integer("stock").notNull().default(10),
   images: text("images").array().notNull().default([]),
+  supplierUrl: text("supplier_url"),
+  supplierCost: numeric("supplier_cost", { precision: 10, scale: 2 }),
   featured: boolean("featured").notNull().default(false),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at")
