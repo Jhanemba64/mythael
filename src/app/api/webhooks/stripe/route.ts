@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getStripe } from "@/lib/stripe";
 import { getResend } from "@/lib/resend";
 import { db } from "@/db";
-import { orders, orderItems, products } from "@/db/schema";
+import { orders, orderItems, products, customers } from "@/db/schema";
 import { eq, sql } from "drizzle-orm";
 import type Stripe from "stripe";
 
@@ -60,12 +60,26 @@ export async function POST(req: NextRequest) {
           return { productId: parseInt(idStr), quantity: parseInt(qtyStr) || 1 };
         });
 
+      // Link order to existing customer account if email matches
+      const customerEmail = session.customer_details?.email || "";
+      let customerId: number | null = null;
+      if (customerEmail) {
+        const existingCustomer = await db.query.customers.findFirst({
+          where: eq(customers.email, customerEmail),
+          columns: { id: true },
+        });
+        if (existingCustomer) {
+          customerId = existingCustomer.id;
+        }
+      }
+
       // Create order
       const [order] = await db
         .insert(orders)
         .values({
+          customerId,
           stripePaymentId: session.payment_intent as string,
-          email: session.customer_details?.email || "",
+          email: customerEmail,
           firstName: customerName.split(" ")[0] || "",
           lastName: customerName.split(" ").slice(1).join(" ") || "",
           addressLine1: address?.line1 || "",

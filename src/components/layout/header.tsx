@@ -4,14 +4,24 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./locale-switcher";
 import { useCart } from "@/components/cart/cart-provider";
-import { ShoppingBag, Menu } from "lucide-react";
-import { useState } from "react";
+import { ShoppingBag, Menu, User } from "lucide-react";
+import { useState, useEffect } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export function Header() {
   const t = useTranslations("nav");
   const { totalItems, setIsOpen: setCartOpen } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [auth, setAuth] = useState<{ authenticated: boolean; firstName?: string }>({
+    authenticated: false,
+  });
+
+  useEffect(() => {
+    fetch("/api/auth/me")
+      .then((res) => res.json())
+      .then(setAuth)
+      .catch(() => {});
+  }, []);
 
   const navLinks = [
     { href: "/shop" as const, label: t("shop") },
@@ -44,12 +54,22 @@ export function Header() {
         <div className="flex items-center gap-4">
           <LocaleSwitcher />
 
-          <Link
-            href="/account/login"
-            className="hidden text-sm text-muted-foreground transition-colors hover:text-foreground md:block"
-          >
-            {t("login")}
-          </Link>
+          {auth.authenticated ? (
+            <Link
+              href="/account"
+              className="hidden items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground md:flex"
+            >
+              <User className="h-4 w-4" />
+              {auth.firstName || t("account")}
+            </Link>
+          ) : (
+            <Link
+              href="/account/login"
+              className="hidden text-sm text-muted-foreground transition-colors hover:text-foreground md:block"
+            >
+              {t("login")}
+            </Link>
+          )}
 
           {/* Cart button */}
           <button
@@ -82,13 +102,24 @@ export function Header() {
                     {link.label}
                   </Link>
                 ))}
-                <Link
-                  href="/account/login"
-                  onClick={() => setMenuOpen(false)}
-                  className="text-lg text-muted-foreground"
-                >
-                  {t("login")}
-                </Link>
+                {auth.authenticated ? (
+                  <Link
+                    href="/account"
+                    onClick={() => setMenuOpen(false)}
+                    className="flex items-center gap-2 text-lg text-muted-foreground"
+                  >
+                    <User className="h-4 w-4" />
+                    {auth.firstName || t("account")}
+                  </Link>
+                ) : (
+                  <Link
+                    href="/account/login"
+                    onClick={() => setMenuOpen(false)}
+                    className="text-lg text-muted-foreground"
+                  >
+                    {t("login")}
+                  </Link>
+                )}
               </nav>
             </SheetContent>
           </Sheet>
