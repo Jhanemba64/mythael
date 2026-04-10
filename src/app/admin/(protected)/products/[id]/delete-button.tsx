@@ -12,6 +12,7 @@ export function DeleteProductButton({ id }: { id: number }) {
     if (!confirm("Delete this product?")) return;
     await deleteProductAction(id);
     router.push("/admin/products");
+    router.refresh();
   }
 
   return (

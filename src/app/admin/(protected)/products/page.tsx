@@ -12,7 +12,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Plus } from "lucide-react";
+import { Plus, Pencil, Trash2 } from "lucide-react";
+import { DeleteProductButton } from "./[id]/delete-button";
 
 async function getProducts() {
   try {
@@ -51,6 +52,7 @@ export default async function AdminProductsPage() {
               <TableHead className="text-right">Price</TableHead>
               <TableHead className="text-right">Stock</TableHead>
               <TableHead className="text-right">Featured</TableHead>
+              <TableHead className="text-right">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -83,6 +85,16 @@ export default async function AdminProductsPage() {
                 </TableCell>
                 <TableCell className="text-right text-sm">
                   {product.featured ? "Yes" : "—"}
+                </TableCell>
+                <TableCell className="text-right">
+                  <div className="flex items-center justify-end gap-2">
+                    <Link href={`/admin/products/${product.id}`}>
+                      <Button variant="outline" size="sm">
+                        <Pencil className="h-3.5 w-3.5" />
+                      </Button>
+                    </Link>
+                    <DeleteProductButton id={product.id} />
+                  </div>
                 </TableCell>
               </TableRow>
             ))}
