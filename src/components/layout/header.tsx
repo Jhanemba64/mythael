@@ -18,16 +18,23 @@ export function Header() {
     authenticated: false,
   });
 
-  useEffect(() => {
+  function refreshAuth() {
     fetch("/api/auth/me")
       .then((res) => res.json())
       .then(setAuth)
       .catch(() => {});
+  }
+
+  useEffect(() => {
+    refreshAuth();
+    window.addEventListener("auth-change", refreshAuth);
+    return () => window.removeEventListener("auth-change", refreshAuth);
   }, []);
 
   async function handleLogout() {
     await logoutAction();
     setAuth({ authenticated: false });
+    window.dispatchEvent(new Event("auth-change"));
     router.push("/");
   }
 

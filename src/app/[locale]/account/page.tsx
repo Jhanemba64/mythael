@@ -6,7 +6,6 @@ import { customers, orders } from "@/db/schema";
 import { eq, or, desc } from "drizzle-orm";
 import { formatPrice } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
-import { LogoutButton } from "./logout-button";
 import type { Order, Customer } from "@/db/schema";
 
 async function getAccountData() {
@@ -67,11 +66,10 @@ function AccountPageClient({
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12">
-      <div className="flex items-center justify-between">
+      <div>
         <h1 className="font-heading text-2xl tracking-wide text-foreground">
           {t("title")}
         </h1>
-        <LogoutButton />
       </div>
 
       <p className="mt-2 text-sm text-muted-foreground">

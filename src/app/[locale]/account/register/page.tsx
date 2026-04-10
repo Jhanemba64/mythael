@@ -25,6 +25,7 @@ export default function RegisterPage() {
     const result = await registerAction(formData);
 
     if (result.success) {
+      window.dispatchEvent(new Event("auth-change"));
       router.push("/account");
     } else {
       setError(result.error || "Error");
