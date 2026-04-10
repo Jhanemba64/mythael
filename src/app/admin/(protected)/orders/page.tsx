@@ -17,6 +17,7 @@ const statusColors: Record<string, string> = {
   paid: "bg-blue-500/10 text-blue-500",
   shipped: "bg-primary/10 text-primary",
   delivered: "bg-green-500/10 text-green-500",
+  refunded: "bg-red-500/10 text-red-500",
 };
 
 async function getOrders() {

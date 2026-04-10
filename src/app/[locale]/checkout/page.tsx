@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import { useCart } from "@/components/cart/cart-provider";
 import { Link } from "@/i18n/navigation";
-import { ShoppingBag, Loader2 } from "lucide-react";
+import { ShoppingBag, Loader2, Truck } from "lucide-react";
 import { useState } from "react";
 import { formatPrice } from "@/lib/utils";
 
@@ -35,11 +35,9 @@ export default function CheckoutPage() {
     setError(null);
 
     try {
+      // Only send IDs and quantities — prices are validated server-side from DB
       const cartItems = items.map((item) => ({
         id: item.id,
-        nameFr: item.nameFr,
-        nameEn: item.nameEn,
-        price: item.price,
         quantity: item.quantity,
       }));
 
@@ -96,6 +94,14 @@ export default function CheckoutPage() {
             </span>
           </div>
         </div>
+      </div>
+
+      {/* Delivery notice */}
+      <div className="mt-4 flex items-start gap-2 rounded-md border border-border/50 bg-card/50 p-3">
+        <Truck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+        <p className="text-xs leading-relaxed text-muted-foreground">
+          {t("deliveryNotice")}
+        </p>
       </div>
 
       {error && (

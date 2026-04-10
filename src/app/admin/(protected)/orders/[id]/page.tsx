@@ -5,6 +5,7 @@ import { eq } from "drizzle-orm";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ShipOrderForm } from "./ship-form";
+import { RefundOrderForm } from "./refund-form";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -27,6 +28,7 @@ const statusColors: Record<string, string> = {
   paid: "bg-blue-500/10 text-blue-500",
   shipped: "bg-primary/10 text-primary",
   delivered: "bg-green-500/10 text-green-500",
+  refunded: "bg-red-500/10 text-red-500",
 };
 
 export default async function AdminOrderDetailPage({ params }: Props) {
@@ -135,6 +137,14 @@ export default async function AdminOrderDetailPage({ params }: Props) {
         <>
           <Separator className="my-6" />
           <ShipOrderForm orderId={order.id} />
+        </>
+      )}
+
+      {/* Refund action — available for paid and shipped orders */}
+      {(order.status === "paid" || order.status === "shipped") && (
+        <>
+          <Separator className="my-6" />
+          <RefundOrderForm orderId={order.id} />
         </>
       )}
     </div>
