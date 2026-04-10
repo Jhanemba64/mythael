@@ -12,7 +12,8 @@
     "account": "Mon Compte",
     "login": "Connexion",
     "register": "Inscription",
-    "logout": "Deconnexion"
+    "logout": "Deconnexion",
+    "orders": "Mes commandes"
   },
   "home": {
     "hero": {

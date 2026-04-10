@@ -12,7 +12,8 @@
     "account": "My Account",
     "login": "Sign In",
     "register": "Sign Up",
-    "logout": "Sign Out"
+    "logout": "Sign Out",
+    "orders": "My Orders"
   },
   "home": {
     "hero": {
