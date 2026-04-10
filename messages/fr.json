@@ -65,9 +65,12 @@
   },
   "checkout": {
     "title": "Finaliser la commande",
+    "deliveryNotice": "Livraison estimee : 2 a 4 semaines. Un numero de suivi vous sera envoye par email des l'expedition.",
     "success": {
       "title": "Merci pour votre commande !",
       "message": "Vous recevrez un email de confirmation sous peu.",
+      "errorTitle": "Paiement non verifie",
+      "errorMessage": "Nous n'avons pas pu confirmer votre paiement. Si vous avez ete debite, contactez-nous a contact@mythael.com.",
       "backToShop": "Retour a la boutique"
     }
   },
@@ -79,7 +82,9 @@
       "pending": "En attente",
       "paid": "Payee",
       "shipped": "Expediee",
-      "delivered": "Livree"
+      "delivered": "Livree",
+      "refunded": "Remboursee",
+      "trackOrder": "Suivre mon colis"
     }
   },
   "auth": {

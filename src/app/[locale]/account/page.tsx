@@ -58,6 +58,7 @@ function AccountPageClient({
     paid: "bg-blue-500/10 text-blue-500",
     shipped: "bg-primary/10 text-primary",
     delivered: "bg-green-500/10 text-green-500",
+    refunded: "bg-red-500/10 text-red-500",
   };
 
   return (
@@ -96,9 +97,15 @@ function AccountPageClient({
                   )}
                 </p>
                 {order.trackingNumber && (
-                  <p className="mt-1 text-xs text-primary">
-                    Tracking: {order.trackingNumber}
-                  </p>
+                  <a
+                    href={`https://t.17track.net/fr#nums=${order.trackingNumber}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-flex items-center gap-1 text-xs text-primary hover:underline"
+                  >
+                    {tStatus("trackOrder")}
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
                 )}
               </div>
               <div className="text-right">
@@ -108,7 +115,7 @@ function AccountPageClient({
                 <Badge
                   className={`mt-1 text-xs ${statusColors[order.status] || ""}`}
                 >
-                  {tStatus(order.status as "pending" | "paid" | "shipped" | "delivered")}
+                  {tStatus(order.status as "pending" | "paid" | "shipped" | "delivered" | "refunded")}
                 </Badge>
               </div>
             </div>

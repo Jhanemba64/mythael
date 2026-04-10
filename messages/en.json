@@ -65,9 +65,12 @@
   },
   "checkout": {
     "title": "Checkout",
+    "deliveryNotice": "Estimated delivery: 2 to 4 weeks. A tracking number will be sent to you by email once shipped.",
     "success": {
       "title": "Thank you for your order!",
       "message": "You will receive a confirmation email shortly.",
+      "errorTitle": "Payment not verified",
+      "errorMessage": "We could not confirm your payment. If you were charged, please contact us at contact@mythael.com.",
       "backToShop": "Back to shop"
     }
   },
@@ -79,7 +82,9 @@
       "pending": "Pending",
       "paid": "Paid",
       "shipped": "Shipped",
-      "delivered": "Delivered"
+      "delivered": "Delivered",
+      "refunded": "Refunded",
+      "trackOrder": "Track my order"
     }
   },
   "auth": {
