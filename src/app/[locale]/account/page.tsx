@@ -3,7 +3,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { getCustomerSession } from "@/lib/auth/customer";
 import { db } from "@/db";
 import { customers, orders } from "@/db/schema";
-import { eq, desc } from "drizzle-orm";
+import { eq, or, desc } from "drizzle-orm";
 import { formatPrice } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { LogoutButton } from "./logout-button";
@@ -19,8 +19,12 @@ async function getAccountData() {
     });
     if (!customer) return null;
 
+    // Find orders by customerId OR matching email (for orders placed before account creation)
     const customerOrders = await db.query.orders.findMany({
-      where: eq(orders.customerId, session.customerId),
+      where: or(
+        eq(orders.customerId, session.customerId),
+        eq(orders.email, customer.email)
+      ),
       orderBy: [desc(orders.createdAt)],
     });
 
