@@ -5,24 +5,24 @@ const content = {
     title: "Politique de Retour",
     sections: [
       {
-        heading: "Delai de retractation",
-        text: "Vous disposez de 14 jours calendaires a compter de la reception de votre commande pour nous notifier votre souhait de retourner un article.",
+        heading: "Délai de rétractation",
+        text: "Vous disposez de 14 jours calendaires à compter de la réception de votre commande pour nous notifier votre souhait de retourner un article.",
       },
       {
         heading: "Conditions de retour",
-        text: "L'article doit etre retourne dans son emballage d'origine, non utilise et en parfait etat. Les articles personnalises ne peuvent pas etre retournes sauf en cas de defaut.",
+        text: "L'article doit être retourné dans son emballage d'origine, non utilisé et en parfait état. Les articles personnalisés ne peuvent pas être retournés sauf en cas de défaut.",
       },
       {
-        heading: "Procedure",
-        text: "Contactez-nous a contact@mythael.com en indiquant votre numero de commande et le motif du retour. Nous vous communiquerons les instructions d'envoi. Les frais de retour sont a la charge du client.",
+        heading: "Procédure",
+        text: "Contactez-nous à contact@mythael.com en indiquant votre numéro de commande et le motif du retour. Nous vous communiquerons les instructions d'envoi. Les frais de retour sont à la charge du client.",
       },
       {
         heading: "Remboursement",
-        text: "Le remboursement sera effectue dans un delai de 14 jours apres reception et verification de l'article retourne, via le meme moyen de paiement utilise lors de l'achat.",
+        text: "Le remboursement sera effectué dans un délai de 14 jours après réception et vérification de l'article retourné, via le même moyen de paiement utilisé lors de l'achat.",
       },
       {
-        heading: "Articles defectueux",
-        text: "Si vous recevez un article endommage ou defectueux, contactez-nous immediatement avec des photos. Nous procederons a un echange ou un remboursement integral, frais de retour inclus.",
+        heading: "Articles défectueux",
+        text: "Si vous recevez un article endommagé ou défectueux, contactez-nous immédiatement avec des photos. Nous procéderons à un échange ou un remboursement intégral, frais de retour inclus.",
       },
     ],
   },

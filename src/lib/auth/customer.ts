@@ -2,9 +2,11 @@ import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 
 const COOKIE_NAME = "mythael-session";
-const secret = new TextEncoder().encode(
-  process.env.ADMIN_JWT_SECRET || "fallback-secret-change-me"
-);
+const jwtSecret = process.env.ADMIN_JWT_SECRET;
+if (!jwtSecret) {
+  throw new Error("ADMIN_JWT_SECRET environment variable is required");
+}
+const secret = new TextEncoder().encode(jwtSecret);
 
 export async function createCustomerSession(customerId: number) {
   const token = await new SignJWT({ customerId, role: "customer" })

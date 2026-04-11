@@ -37,7 +37,7 @@ export async function markShippedAction(
         to: order.email,
         subject: `Your order #${orderId} has shipped!`,
         html: `<h2>Votre commande est en route ! / Your order is on its way!</h2>
-               <p>Commande <strong>#${orderId}</strong> expediee. / Order <strong>#${orderId}</strong> has been shipped.</p>
+               <p>Commande <strong>#${orderId}</strong> expédiée. / Order <strong>#${orderId}</strong> has been shipped.</p>
                <p>Suivez votre colis / Track your package:<br/>
                <a href="https://t.17track.net/fr#nums=${trackingNumber}" style="color:#D4AF37;font-weight:bold;">${trackingNumber} — Suivre mon colis / Track my order &rarr;</a></p>
                <br/>

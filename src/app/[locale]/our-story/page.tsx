@@ -4,16 +4,16 @@ import { Separator } from "@/components/ui/separator";
 const values = {
   fr: [
     {
-      title: "Selection rigoureuse",
-      text: "Chaque produit est choisi pour la qualite de ses finitions, la richesse de ses details et sa capacite a transporter dans un autre monde. Nous ne retenons que les pieces qui nous font vibrer.",
+      title: "Sélection rigoureuse",
+      text: "Chaque produit est choisi pour la qualité de ses finitions, la richesse de ses détails et sa capacité à transporter dans un autre monde. Nous ne retenons que les pièces qui nous font vibrer.",
     },
     {
       title: "Univers immersif",
-      text: "Des bijoux elfiques aux figurines de gardiens anciens, chaque piece s'inscrit dans un univers coherent. Nous construisons un monde ou chaque objet a sa place et son histoire.",
+      text: "Des bijoux elfiques aux figurines de gardiens anciens, chaque pièce s'inscrit dans un univers cohérent. Nous construisons un monde où chaque objet a sa place et son histoire.",
     },
     {
-      title: "Accessibilite",
-      text: "La fantasy ne devrait pas etre un luxe. Nous proposons des pieces d'exception a des prix justes, pour que chaque passione puisse s'entourer de magie au quotidien.",
+      title: "Accessibilité",
+      text: "La fantasy ne devrait pas être un luxe. Nous proposons des pièces d'exception à des prix justes, pour que chaque passionné puisse s'entourer de magie au quotidien.",
     },
   ],
   en: [
@@ -36,10 +36,10 @@ const story = {
   fr: {
     title: "Notre Histoire",
     intro:
-      "Mythael est ne d'une obsession : trouver des objets qui donnent l'impression que les mondes fantastiques existent vraiment.",
-    p1: "Tout a commence par un constat simple. Passionnes de fantasy, de jeux de role et de mythologies depuis toujours, nous cherchions des objets qui portent cette magie — des pieces qui ne soient pas de simples accessoires, mais de veritables fragments d'univers.",
-    p2: "Alors nous avons decide de les trouver. De parcourir, comparer, tester, jusqu'a denicher les creations qui meritent d'etre partagees. Des figurines aux details saisissants, des bijoux qui racontent des legendes, des accessoires qui transforment une table de jeu en terrain d'aventure.",
-    p3: "Mythael, c'est cette quete : selectionner avec exigence, presenter avec soin, et livrer avec fiabilite. Pour que chaque commande soit une porte ouverte vers l'imaginaire.",
+      "Mythael est né d'une obsession : trouver des objets qui donnent l'impression que les mondes fantastiques existent vraiment.",
+    p1: "Tout a commencé par un constat simple. Passionnés de fantasy, de jeux de rôle et de mythologies depuis toujours, nous cherchions des objets qui portent cette magie — des pièces qui ne soient pas de simples accessoires, mais de véritables fragments d'univers.",
+    p2: "Alors nous avons décidé de les trouver. De parcourir, comparer, tester, jusqu'à dénicher les créations qui méritent d'être partagées. Des figurines aux détails saisissants, des bijoux qui racontent des légendes, des accessoires qui transforment une table de jeu en terrain d'aventure.",
+    p3: "Mythael, c'est cette quête : sélectionner avec exigence, présenter avec soin, et livrer avec fiabilité. Pour que chaque commande soit une porte ouverte vers l'imaginaire.",
     valuesTitle: "Ce qui nous guide",
   },
   en: {

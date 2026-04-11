@@ -3,39 +3,39 @@ import { Separator } from "@/components/ui/separator";
 
 const faq = {
   fr: {
-    title: "Questions Frequentes",
+    title: "Questions Fréquentes",
     items: [
       {
-        q: "Comment selectionnez-vous vos produits ?",
-        a: "Chaque piece est choisie avec soin pour sa qualite, ses details et son inspiration fantasy. Nous recherchons des creations qui racontent une histoire et transportent dans un autre univers. De legeres variations peuvent exister entre deux exemplaires — c'est ce qui rend chaque objet unique.",
+        q: "Comment sélectionnez-vous vos produits ?",
+        a: "Chaque pièce est choisie avec soin pour sa qualité, ses détails et son inspiration fantasy. Nous recherchons des créations qui racontent une histoire et transportent dans un autre univers. De légères variations peuvent exister entre deux exemplaires — c'est ce qui rend chaque objet unique.",
       },
       {
-        q: "Quels sont les delais de livraison ?",
-        a: "Nos pieces etant preparees avec soin, comptez 2 a 4 semaines pour la livraison. Certains articles en stock peuvent etre expedies sous 5 a 7 jours. Vous recevrez un email avec un numero de suivi des l'expedition.",
+        q: "Quels sont les délais de livraison ?",
+        a: "Nos pièces sont expédiées depuis nos entrepôts européens. Comptez 3 à 7 jours ouvrés pour la livraison en France et en Europe. Vous recevrez un email avec un numéro de suivi dès l'expédition.",
       },
       {
-        q: "Livrez-vous a l'international ?",
-        a: "Oui, nous livrons dans toute l'Europe et a l'international. La livraison est offerte pour toutes les commandes.",
+        q: "Livrez-vous à l'international ?",
+        a: "Oui, nous livrons dans toute l'Europe et à l'international. La livraison est offerte pour toutes les commandes.",
       },
       {
         q: "Puis-je retourner un article ?",
-        a: "Vous disposez de 14 jours apres reception pour nous retourner un article dans son emballage d'origine. Consultez notre politique de retour pour plus de details.",
+        a: "Vous disposez de 14 jours après réception pour nous retourner un article dans son emballage d'origine. Consultez notre politique de retour pour plus de détails.",
       },
       {
-        q: "Puis-je faire une demande speciale ?",
-        a: "Nous sommes a l'ecoute de vos envies. Contactez-nous par email a contact@mythael.com pour discuter de votre demande — nous ferons notre possible pour y repondre.",
+        q: "Puis-je faire une demande spéciale ?",
+        a: "Nous sommes à l'écoute de vos envies. Contactez-nous par email à contact@mythael.com pour discuter de votre demande — nous ferons notre possible pour y répondre.",
       },
       {
-        q: "Comment entretenez-vous les figurines en resine ?",
-        a: "Un simple depoussierage avec un chiffon doux suffit. Evitez l'exposition directe au soleil prolongee et les sources de chaleur intense pour preserver les couleurs.",
+        q: "Comment entretenez-vous les figurines en résine ?",
+        a: "Un simple dépoussiérage avec un chiffon doux suffit. Évitez l'exposition directe au soleil prolongée et les sources de chaleur intense pour préserver les couleurs.",
       },
       {
-        q: "Le paiement est-il securise ?",
-        a: "Absolument. Nous utilisons Stripe, un leader mondial du paiement en ligne. Vos donnees bancaires ne transitent jamais par nos serveurs.",
+        q: "Le paiement est-il sécurisé ?",
+        a: "Absolument. Nous utilisons Stripe, un leader mondial du paiement en ligne. Vos données bancaires ne transitent jamais par nos serveurs.",
       },
       {
-        q: "Comment protegez-vous mes donnees personnelles ?",
-        a: "Votre vie privee est une priorite. Nous sommes conformes au RGPD (Reglement General sur la Protection des Donnees). Nous ne collectons que les informations strictement necessaires a vos commandes, nous ne vendons jamais vos donnees, et vos paiements sont securises par Stripe (certifie PCI DSS niveau 1). Vous pouvez a tout moment acceder, modifier ou supprimer vos donnees en nous contactant. Consultez notre politique de confidentialite pour tous les details.",
+        q: "Comment protégez-vous mes données personnelles ?",
+        a: "Votre vie privée est une priorité. Nous sommes conformes au RGPD (Règlement Général sur la Protection des Données). Nous ne collectons que les informations strictement nécessaires à vos commandes, nous ne vendons jamais vos données, et vos paiements sont sécurisés par Stripe (certifié PCI DSS niveau 1). Vous pouvez à tout moment accéder, modifier ou supprimer vos données en nous contactant. Consultez notre politique de confidentialité pour tous les détails.",
       },
     ],
   },
@@ -48,7 +48,7 @@ const faq = {
       },
       {
         q: "What are the delivery times?",
-        a: "Since our pieces are carefully prepared, allow 2 to 4 weeks for delivery. Some items in stock can be shipped within 5 to 7 days. You'll receive an email with a tracking number as soon as it ships.",
+        a: "Our pieces are shipped from our European warehouses. Allow 3 to 7 business days for delivery in France and Europe. You'll receive an email with a tracking number as soon as it ships.",
       },
       {
         q: "Do you ship internationally?",

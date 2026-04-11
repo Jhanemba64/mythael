@@ -2,52 +2,52 @@ import { useLocale } from "next-intl";
 
 const content = {
   fr: {
-    title: "Politique de Confidentialite",
-    lastUpdated: "Derniere mise a jour : 10 avril 2026",
+    title: "Politique de Confidentialité",
+    lastUpdated: "Dernière mise à jour : 10 avril 2026",
     sections: [
       {
         heading: "1. Responsable du traitement",
-        text: "Le responsable du traitement de vos donnees personnelles est Mythael, joignable a l'adresse contact@mythael.com. Pour toute question relative a la protection de vos donnees, vous pouvez nous contacter a cette adresse.",
+        text: "Le responsable du traitement de vos données personnelles est Mythael, joignable à l'adresse contact@mythael.com. Pour toute question relative à la protection de vos données, vous pouvez nous contacter à cette adresse.",
       },
       {
-        heading: "2. Donnees collectees",
-        text: "Nous collectons uniquement les donnees strictement necessaires au traitement de vos commandes et a la gestion de votre compte : nom, prenom, adresse email, adresse de livraison, preference de langue et historique de commandes. Les donnees de paiement (numero de carte, etc.) sont traitees exclusivement par Stripe et ne transitent jamais par nos serveurs.",
+        heading: "2. Données collectées",
+        text: "Nous collectons uniquement les données strictement nécessaires au traitement de vos commandes et à la gestion de votre compte : nom, prénom, adresse email, adresse de livraison, préférence de langue et historique de commandes. Les données de paiement (numéro de carte, etc.) sont traitées exclusivement par Stripe et ne transitent jamais par nos serveurs.",
       },
       {
-        heading: "3. Base legale du traitement",
-        text: "Le traitement de vos donnees repose sur : (a) l'execution du contrat de vente pour les donnees liees a vos commandes, (b) votre consentement pour la creation de votre compte client, et (c) notre interet legitime pour l'amelioration de nos services et la prevention de la fraude.",
+        heading: "3. Base légale du traitement",
+        text: "Le traitement de vos données repose sur : (a) l'exécution du contrat de vente pour les données liées à vos commandes, (b) votre consentement pour la création de votre compte client, et (c) notre intérêt légitime pour l'amélioration de nos services et la prévention de la fraude.",
       },
       {
-        heading: "4. Finalites du traitement",
-        text: "Vos donnees sont utilisees pour : traiter et suivre vos commandes, gerer votre compte client, vous envoyer les emails transactionnels (confirmation de commande, notification d'expedition), repondre a vos demandes de support, et ameliorer la qualite de nos services. Nous ne vendons, ne louons et ne partageons jamais vos donnees a des fins publicitaires ou commerciales.",
+        heading: "4. Finalités du traitement",
+        text: "Vos données sont utilisées pour : traiter et suivre vos commandes, gérer votre compte client, vous envoyer les emails transactionnels (confirmation de commande, notification d'expédition), répondre à vos demandes de support, et améliorer la qualité de nos services. Nous ne vendons, ne louons et ne partageons jamais vos données à des fins publicitaires ou commerciales.",
       },
       {
         heading: "5. Sous-traitants et transferts",
-        text: "Pour assurer nos services, nous faisons appel aux sous-traitants suivants : Stripe (paiement securise, certifie PCI DSS niveau 1), Resend (envoi d'emails transactionnels), Vercel (hebergement du site), et Neon (base de donnees). Ces prestataires sont situes dans l'UE et/ou aux Etats-Unis et offrent des garanties conformes au RGPD (clauses contractuelles types, Data Privacy Framework). Aucun transfert de donnees n'est effectue vers des pays ne disposant pas d'un niveau de protection adequat sans garanties appropriees.",
+        text: "Pour assurer nos services, nous faisons appel aux sous-traitants suivants : Stripe (paiement sécurisé, certifié PCI DSS niveau 1), Resend (envoi d'emails transactionnels), Vercel (hébergement du site), et Neon (base de données). Ces prestataires sont situés dans l'UE et/ou aux États-Unis et offrent des garanties conformes au RGPD (clauses contractuelles types, Data Privacy Framework). Aucun transfert de données n'est effectué vers des pays ne disposant pas d'un niveau de protection adéquat sans garanties appropriées.",
       },
       {
-        heading: "6. Duree de conservation",
-        text: "Les donnees liees a votre compte sont conservees tant que votre compte est actif. Les donnees de commandes sont conservees pendant la duree legale obligatoire (10 ans a des fins comptables). En cas de suppression de votre compte, vos donnees personnelles sont effacees sous 30 jours, a l'exception des donnees que nous sommes legalement tenus de conserver.",
+        heading: "6. Durée de conservation",
+        text: "Les données liées à votre compte sont conservées tant que votre compte est actif. Les données de commandes sont conservées pendant la durée légale obligatoire (10 ans à des fins comptables). En cas de suppression de votre compte, vos données personnelles sont effacées sous 30 jours, à l'exception des données que nous sommes légalement tenus de conserver.",
       },
       {
-        heading: "7. Securite des donnees",
-        text: "Nous mettons en oeuvre des mesures techniques et organisationnelles appropriees pour proteger vos donnees : chiffrement SSL/TLS de toutes les communications, hashage des mots de passe (bcrypt), paiements geres par Stripe (certifie PCI DSS niveau 1), acces restreint aux donnees personnelles, hebergement securise sur infrastructure Vercel. Vos donnees bancaires ne sont jamais stockees sur nos serveurs.",
+        heading: "7. Sécurité des données",
+        text: "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données : chiffrement SSL/TLS de toutes les communications, hashage des mots de passe (bcrypt), paiements gérés par Stripe (certifié PCI DSS niveau 1), accès restreint aux données personnelles, hébergement sécurisé sur infrastructure Vercel. Vos données bancaires ne sont jamais stockées sur nos serveurs.",
       },
       {
         heading: "8. Cookies",
-        text: "Nous utilisons exclusivement des cookies essentiels au fonctionnement du site : session d'authentification, contenu du panier (stocke localement dans votre navigateur) et preference de langue. Aucun cookie de tracking, d'analyse ou de publicite n'est utilise. Aucun consentement supplementaire n'est donc requis pour ces cookies strictement necessaires, conformement a la directive ePrivacy.",
+        text: "Nous utilisons exclusivement des cookies essentiels au fonctionnement du site : session d'authentification, contenu du panier (stocké localement dans votre navigateur) et préférence de langue. Aucun cookie de tracking, d'analyse ou de publicité n'est utilisé. Aucun consentement supplémentaire n'est donc requis pour ces cookies strictement nécessaires, conformément à la directive ePrivacy.",
       },
       {
         heading: "9. Vos droits (RGPD)",
-        text: "Conformement au Reglement General sur la Protection des Donnees (UE 2016/679), vous disposez des droits suivants : droit d'acces a vos donnees personnelles, droit de rectification des donnees inexactes, droit a l'effacement (« droit a l'oubli »), droit a la limitation du traitement, droit a la portabilite de vos donnees, droit d'opposition au traitement. Pour exercer ces droits, contactez-nous a contact@mythael.com. Nous repondrons dans un delai maximum de 30 jours. Vous avez egalement le droit d'introduire une reclamation aupres de l'autorite de controle competente (CNIL en France : www.cnil.fr).",
+        text: "Conformément au Règlement Général sur la Protection des Données (UE 2016/679), vous disposez des droits suivants : droit d'accès à vos données personnelles, droit de rectification des données inexactes, droit à l'effacement (« droit à l'oubli »), droit à la limitation du traitement, droit à la portabilité de vos données, droit d'opposition au traitement. Pour exercer ces droits, contactez-nous à contact@mythael.com. Nous répondrons dans un délai maximum de 30 jours. Vous avez également le droit d'introduire une réclamation auprès de l'autorité de contrôle compétente (CNIL en France : www.cnil.fr).",
       },
       {
         heading: "10. Mineurs",
-        text: "Notre site ne s'adresse pas aux personnes de moins de 16 ans. Nous ne collectons pas sciemment de donnees personnelles de mineurs. Si vous etes parent ou tuteur et pensez que votre enfant nous a fourni des donnees personnelles, contactez-nous pour que nous les supprimions.",
+        text: "Notre site ne s'adresse pas aux personnes de moins de 16 ans. Nous ne collectons pas sciemment de données personnelles de mineurs. Si vous êtes parent ou tuteur et pensez que votre enfant nous a fourni des données personnelles, contactez-nous pour que nous les supprimions.",
       },
       {
         heading: "11. Modifications",
-        text: "Nous nous reservons le droit de modifier cette politique de confidentialite a tout moment. Toute modification sera publiee sur cette page avec une date de mise a jour. Nous vous encourageons a consulter cette page regulierement.",
+        text: "Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Toute modification sera publiée sur cette page avec une date de mise à jour. Nous vous encourageons à consulter cette page régulièrement.",
       },
     ],
   },
