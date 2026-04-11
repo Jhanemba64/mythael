@@ -29,6 +29,50 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
   }
 
+  // ---------- checkout.session.expired ----------
+  if (event.type === "checkout.session.expired") {
+    const session = event.data.object as Stripe.Checkout.Session;
+    console.log(
+      `Checkout expired for ${session.customer_details?.email || "unknown"}`
+    );
+  }
+
+  // ---------- charge.refunded ----------
+  if (event.type === "charge.refunded") {
+    const charge = event.data.object as Stripe.Charge;
+    // Update order status if we have a matching payment intent
+    if (charge.payment_intent) {
+      await db
+        .update(orders)
+        .set({ status: "refunded" })
+        .where(eq(orders.stripePaymentId, charge.payment_intent as string));
+    }
+  }
+
+  // ---------- charge.dispute.created ----------
+  if (event.type === "charge.dispute.created") {
+    const dispute = event.data.object as Stripe.Dispute;
+    console.error(
+      `⚠ Dispute created for charge ${dispute.charge} — amount: ${dispute.amount / 100} EUR`
+    );
+    // Mark order as disputed if we can match the payment intent
+    if (dispute.payment_intent) {
+      await db
+        .update(orders)
+        .set({ status: "disputed" })
+        .where(eq(orders.stripePaymentId, dispute.payment_intent as string));
+    }
+  }
+
+  // ---------- payment_intent.payment_failed ----------
+  if (event.type === "payment_intent.payment_failed") {
+    const intent = event.data.object as Stripe.PaymentIntent;
+    console.error(
+      `Payment failed for ${intent.id}: ${intent.last_payment_error?.message || "unknown error"}`
+    );
+  }
+
+  // ---------- checkout.session.completed ----------
   if (event.type === "checkout.session.completed") {
     const session = event.data.object as Stripe.Checkout.Session;
 
