@@ -41,17 +41,17 @@ function HomePageClient({
     {
       slug: "jewelry",
       label: t("categories.jewelry"),
-      icon: "&#10022;",
+      icon: "✦",
     },
     {
       slug: "figurines",
       label: t("categories.figurines"),
-      icon: "&#9816;",
+      icon: "♞",
     },
     {
       slug: "tabletop",
       label: t("categories.tabletop"),
-      icon: "&#9858;",
+      icon: "⚂",
     },
   ];
 
@@ -119,10 +119,9 @@ function HomePageClient({
               href={`/shop?category=${cat.slug}`}
               className="group flex flex-col items-center gap-4 rounded-lg border border-border/50 bg-card px-6 py-10 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
             >
-              <span
-                className="text-4xl text-primary transition-transform group-hover:scale-110"
-                dangerouslySetInnerHTML={{ __html: cat.icon }}
-              />
+              <span className="text-4xl text-primary transition-transform group-hover:scale-110">
+                {cat.icon}
+              </span>
               <span className="font-heading text-lg tracking-wide text-foreground">
                 {cat.label}
               </span>

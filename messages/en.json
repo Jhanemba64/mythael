@@ -66,7 +66,7 @@
   },
   "checkout": {
     "title": "Checkout",
-    "deliveryNotice": "Estimated delivery: 2 to 4 weeks. A tracking number will be sent to you by email once shipped.",
+    "deliveryNotice": "Estimated delivery: 3 to 7 business days. A tracking number will be sent to you by email once shipped.",
     "success": {
       "title": "Thank you for your order!",
       "message": "You will receive a confirmation email shortly.",

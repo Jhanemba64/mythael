@@ -174,7 +174,7 @@ export async function POST(req: NextRequest) {
             to: customerEmail,
             subject: isEn
               ? `Order Confirmed — #${order.id}`
-              : `Commande Confirmee — #${order.id}`,
+              : `Commande Confirmée — #${order.id}`,
             html: isEn
               ? `<h2>Thank you for your order!</h2>
                  <p>Your order <strong>#${order.id}</strong> has been confirmed.</p>
@@ -183,11 +183,11 @@ export async function POST(req: NextRequest) {
                  <br/>
                  <p><em>— The Mythael Team</em></p>`
               : `<h2>Merci pour votre commande !</h2>
-                 <p>Votre commande <strong>#${order.id}</strong> a ete confirmee.</p>
+                 <p>Votre commande <strong>#${order.id}</strong> a été confirmée.</p>
                  <p>Total : <strong>${orderTotal} EUR</strong></p>
-                 <p>Vous recevrez un email de suivi des que votre commande sera expediee.</p>
+                 <p>Vous recevrez un email de suivi dès que votre commande sera expédiée.</p>
                  <br/>
-                 <p><em>— L'equipe Mythael</em></p>`,
+                 <p><em>— L'équipe Mythael</em></p>`,
           });
         }
       } catch (emailErr) {

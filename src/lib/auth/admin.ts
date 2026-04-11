@@ -2,14 +2,16 @@ import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 
 const COOKIE_NAME = "mythael-admin";
-const secret = new TextEncoder().encode(
-  process.env.ADMIN_JWT_SECRET || "fallback-secret-change-me"
-);
+const jwtSecret = process.env.ADMIN_JWT_SECRET;
+if (!jwtSecret) {
+  throw new Error("ADMIN_JWT_SECRET environment variable is required");
+}
+const secret = new TextEncoder().encode(jwtSecret);
 
 export async function createAdminSession() {
   const token = await new SignJWT({ role: "admin" })
     .setProtectedHeader({ alg: "HS256" })
-    .setExpirationTime("7d")
+    .setExpirationTime("4h")
     .sign(secret);
 
   const cookieStore = await cookies();
@@ -17,7 +19,7 @@ export async function createAdminSession() {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
-    maxAge: 60 * 60 * 24 * 7,
+    maxAge: 60 * 60 * 4, // 4 hours
     path: "/",
   });
 }

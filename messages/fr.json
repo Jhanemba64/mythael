@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Mythael — Fantasy d'Exception",
-    "description": "Figurines, bijoux et accessoires inspires des mondes fantastiques. Chaque piece raconte une histoire."
+    "description": "Figurines, bijoux et accessoires inspirés des mondes fantastiques. Chaque pièce raconte une histoire."
   },
   "nav": {
     "home": "Accueil",
@@ -12,18 +12,18 @@
     "account": "Mon Compte",
     "login": "Connexion",
     "register": "Inscription",
-    "logout": "Deconnexion",
+    "logout": "Déconnexion",
     "orders": "Mes commandes"
   },
   "home": {
     "hero": {
       "title": "L'imaginaire prend forme",
-      "subtitle": "Des creations fantasy selectionnees avec passion, une piece a la fois.",
-      "cta": "Decouvrir la collection"
+      "subtitle": "Des créations fantasy sélectionnées avec passion, une pièce à la fois.",
+      "cta": "Découvrir la collection"
     },
     "featured": {
-      "title": "Pieces d'exception",
-      "subtitle": "Selectionnees pour leur beaute et leur histoire unique"
+      "title": "Pièces d'exception",
+      "subtitle": "Sélectionnées pour leur beauté et leur histoire unique"
     },
     "categories": {
       "title": "Nos Univers",
@@ -32,9 +32,9 @@
       "tabletop": "Accessoires JDR"
     },
     "story": {
-      "title": "Nes de la passion",
-      "text": "Mythael est ne d'une passion pour les mondes fantastiques et le desir de rendre leur magie accessible. Nous denichons des pieces uniques pour les amoureux de fantasy.",
-      "cta": "Decouvrir notre histoire"
+      "title": "Nés de la passion",
+      "text": "Mythael est né d'une passion pour les mondes fantastiques et le désir de rendre leur magie accessible. Nous dénichons des pièces uniques pour les amoureux de fantasy.",
+      "cta": "Découvrir notre histoire"
     }
   },
   "shop": {
@@ -51,7 +51,7 @@
     "reviews": "Avis",
     "noReviews": "Aucun avis pour le moment",
     "writeReview": "Laisser un avis",
-    "productNotice": "Chaque piece est inspectee et selectionnee pour sa qualite. De legeres variations peuvent exister et rendent chaque exemplaire unique."
+    "productNotice": "Chaque pièce est inspectée et sélectionnée pour sa qualité. De légères variations peuvent exister et rendent chaque exemplaire unique."
   },
   "cart": {
     "title": "Votre Panier",
@@ -66,13 +66,13 @@
   },
   "checkout": {
     "title": "Finaliser la commande",
-    "deliveryNotice": "Livraison estimee : 2 a 4 semaines. Un numero de suivi vous sera envoye par email des l'expedition.",
+    "deliveryNotice": "Livraison estimée : 3 à 7 jours ouvrés. Un numéro de suivi vous sera envoyé par email dès l'expédition.",
     "success": {
       "title": "Merci pour votre commande !",
       "message": "Vous recevrez un email de confirmation sous peu.",
-      "errorTitle": "Paiement non verifie",
-      "errorMessage": "Nous n'avons pas pu confirmer votre paiement. Si vous avez ete debite, contactez-nous a contact@mythael.com.",
-      "backToShop": "Retour a la boutique"
+      "errorTitle": "Paiement non vérifié",
+      "errorMessage": "Nous n'avons pas pu confirmer votre paiement. Si vous avez été débité, contactez-nous à contact@mythael.com.",
+      "backToShop": "Retour à la boutique"
     }
   },
   "account": {
@@ -81,10 +81,10 @@
     "noOrders": "Aucune commande pour le moment",
     "orderStatus": {
       "pending": "En attente",
-      "paid": "Payee",
-      "shipped": "Expediee",
-      "delivered": "Livree",
-      "refunded": "Remboursee",
+      "paid": "Payée",
+      "shipped": "Expédiée",
+      "delivered": "Livrée",
+      "refunded": "Remboursée",
       "trackOrder": "Suivre mon colis"
     }
   },
@@ -93,25 +93,25 @@
     "register": "Inscription",
     "email": "Email",
     "password": "Mot de passe",
-    "firstName": "Prenom",
+    "firstName": "Prénom",
     "lastName": "Nom",
     "noAccount": "Pas encore de compte ?",
-    "hasAccount": "Deja un compte ?",
-    "createAccount": "Creer un compte",
+    "hasAccount": "Déjà un compte ?",
+    "createAccount": "Créer un compte",
     "loginAction": "Se connecter"
   },
   "footer": {
-    "rights": "Tous droits reserves",
+    "rights": "Tous droits réservés",
     "terms": "CGV",
-    "privacy": "Confidentialite",
+    "privacy": "Confidentialité",
     "returns": "Retours",
-    "tagline": "Inspire par l'imaginaire, guide par la passion."
+    "tagline": "Inspiré par l'imaginaire, guidé par la passion."
   },
   "trust": {
-    "securePayment": "Paiement securise",
-    "curatedSelection": "Selection exigeante",
-    "uniquePieces": "Pieces uniques",
-    "dataProtection": "Donnees protegees (RGPD)",
+    "securePayment": "Paiement sécurisé",
+    "curatedSelection": "Sélection exigeante",
+    "uniquePieces": "Pièces uniques",
+    "dataProtection": "Données protégées (RGPD)",
     "freeShipping": "Livraison offerte"
   }
 }

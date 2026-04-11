@@ -2,39 +2,39 @@ import { useLocale } from "next-intl";
 
 const content = {
   fr: {
-    title: "Conditions Generales de Vente",
+    title: "Conditions Générales de Vente",
     sections: [
       {
         heading: "1. Objet",
-        text: "Les presentes conditions generales de vente regissent les ventes de produits effectuees sur le site mythael.com. Toute commande implique l'acceptation sans reserve de ces conditions.",
+        text: "Les présentes conditions générales de vente régissent les ventes de produits effectuées sur le site mythael.com. Toute commande implique l'acceptation sans réserve de ces conditions.",
       },
       {
         heading: "2. Produits",
-        text: "Les produits proposes sont inspires de l'univers fantasy et selectionnes pour leur qualite. Des variations mineures entre les photos et le produit recu peuvent exister et ne constituent pas un defaut.",
+        text: "Les produits proposés sont inspirés de l'univers fantasy et sélectionnés pour leur qualité. Des variations mineures entre les photos et le produit reçu peuvent exister et ne constituent pas un défaut.",
       },
       {
         heading: "3. Prix",
-        text: "Les prix sont indiques en euros toutes taxes comprises. Mythael se reserve le droit de modifier ses prix a tout moment. Les produits sont factures au prix en vigueur au moment de la validation de la commande.",
+        text: "Les prix sont indiqués en euros toutes taxes comprises. Mythael se réserve le droit de modifier ses prix à tout moment. Les produits sont facturés au prix en vigueur au moment de la validation de la commande.",
       },
       {
         heading: "4. Commande",
-        text: "La validation de la commande vaut acceptation des prix et description des produits. La confirmation de commande entraine la formation du contrat de vente.",
+        text: "La validation de la commande vaut acceptation des prix et description des produits. La confirmation de commande entraîne la formation du contrat de vente.",
       },
       {
         heading: "5. Paiement",
-        text: "Le paiement s'effectue en ligne par carte bancaire via la plateforme securisee Stripe. Le debit est effectue au moment de la validation de la commande.",
+        text: "Le paiement s'effectue en ligne par carte bancaire via la plateforme sécurisée Stripe. Le débit est effectué au moment de la validation de la commande.",
       },
       {
         heading: "6. Livraison",
-        text: "Les delais de livraison sont donnes a titre indicatif (2 a 4 semaines). La livraison est offerte pour toutes les commandes. Un numero de suivi est communique par email.",
+        text: "Les délais de livraison sont donnés à titre indicatif (3 à 7 jours ouvrés). La livraison est offerte pour toutes les commandes. Un numéro de suivi est communiqué par email.",
       },
       {
-        heading: "7. Droit de retractation",
-        text: "Conformement a la legislation en vigueur, vous disposez d'un delai de 14 jours a compter de la reception de votre commande pour exercer votre droit de retractation. Les produits doivent etre retournes dans leur emballage d'origine, en parfait etat.",
+        heading: "7. Droit de rétractation",
+        text: "Conformément à la législation en vigueur, vous disposez d'un délai de 14 jours à compter de la réception de votre commande pour exercer votre droit de rétractation. Les produits doivent être retournés dans leur emballage d'origine, en parfait état.",
       },
       {
-        heading: "8. Protection des donnees personnelles",
-        text: "Les informations collectees sont necessaires au traitement de votre commande. Elles sont traitees conformement au Reglement General sur la Protection des Donnees (RGPD) et a notre politique de confidentialite. Vos donnees de paiement sont gerees par Stripe (certifie PCI DSS niveau 1) et ne sont jamais stockees sur nos serveurs. Vous disposez d'un droit d'acces, de rectification et de suppression de vos donnees. Consultez notre politique de confidentialite pour plus de details.",
+        heading: "8. Protection des données personnelles",
+        text: "Les informations collectées sont nécessaires au traitement de votre commande. Elles sont traitées conformément au Règlement Général sur la Protection des Données (RGPD) et à notre politique de confidentialité. Vos données de paiement sont gérées par Stripe (certifié PCI DSS niveau 1) et ne sont jamais stockées sur nos serveurs. Vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Consultez notre politique de confidentialité pour plus de détails.",
       },
     ],
   },
@@ -63,7 +63,7 @@ const content = {
       },
       {
         heading: "6. Delivery",
-        text: "Delivery times are provided as an indication (2 to 4 weeks). Shipping is free for all orders. A tracking number is sent by email.",
+        text: "Delivery times are provided as an indication (3 to 7 business days). Shipping is free for all orders. A tracking number is sent by email.",
       },
       {
         heading: "7. Right of withdrawal",
