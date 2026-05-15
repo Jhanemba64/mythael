@@ -1,6 +1,6 @@
 # Mythael — Handcrafted Fantasy Creations
 
-Site e-commerce dropshipping fantasy. Figurines, bijoux et accessoires JDR "artisanaux" — produits sourced depuis AliExpress.
+Site e-commerce fantasy. Figurines, bijoux et accessoires JDR "artisanaux" — produits sourced depuis AliExpress.
 
 **Production** : https://mythael.vercel.app
 
