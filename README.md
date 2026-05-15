@@ -163,7 +163,7 @@ src/
 
 ---
 
-## Fournisseurs AliExpress
+## Fournisseurs
 
 Les liens d'achat sont dans `src/db/seed.ts` en commentaires a cote de chaque produit. Flux :
 
