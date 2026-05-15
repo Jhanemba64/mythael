@@ -2,7 +2,7 @@
 
 Site e-commerce fantasy avec sytème de paiement via Stripe. Figurines, bijoux et accessoires JDR "artisanaux".
 
-**Production** : https://mythael.vercel.app
+> ⚠️ **Site retiré de la production.** Le projet ne sera pas déployé publiquement : on ne met pas en ligne un site avec un vrai système de paiement (Stripe) sans cadre légal/commercial. Le code reste disponible à titre de démonstration et de tests en local.
 
 ---
 
