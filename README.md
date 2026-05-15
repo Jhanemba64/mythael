@@ -1,6 +1,6 @@
 # Mythael — Handcrafted Fantasy Creations
 
-Site e-commerce fantasy. Figurines, bijoux et accessoires JDR "artisanaux" — produits sourced depuis AliExpress.
+Site e-commerce fantasy avec sytème de paiement via Stripe. Figurines, bijoux et accessoires JDR "artisanaux".
 
 **Production** : https://mythael.vercel.app
 
@@ -169,8 +169,8 @@ Les liens d'achat sont dans `src/db/seed.ts` en commentaires a cote de chaque pr
 
 1. Client passe commande sur Mythael
 2. Tu recois la notification dans `/admin/orders`
-3. Tu commandes le produit sur AliExpress avec l'adresse du client
-4. AliExpress livre directement chez le client
+3. Tu commandes le produit avec l'adresse du client
+4. Ca livre directement chez le client
 5. Tu marques la commande comme expediee dans l'admin (email tracking envoye)
 
 ---
