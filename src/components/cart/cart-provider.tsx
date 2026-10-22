@@ -3,9 +3,9 @@
 import {
   createContext,
   useContext,
-  useEffect,
   useState,
   useCallback,
+  useSyncExternalStore,
   type ReactNode,
 } from "react";
 
@@ -51,23 +51,33 @@ function saveCart(items: CartItem[]) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
 }
 
+// Cart store backed by localStorage, read through useSyncExternalStore:
+// the server render and hydration use an empty cart, then the stored cart.
+const EMPTY_CART: CartItem[] = [];
+let cartCache: CartItem[] | null = null;
+const listeners = new Set<() => void>();
+
+function getCart(): CartItem[] {
+  if (cartCache === null) cartCache = loadCart();
+  return cartCache;
+}
+
+function subscribe(listener: () => void) {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+}
+
+function setItems(update: (prev: CartItem[]) => CartItem[]) {
+  cartCache = update(getCart());
+  saveCart(cartCache);
+  listeners.forEach((listener) => listener());
+}
+
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>([]);
+  const items = useSyncExternalStore(subscribe, getCart, () => EMPTY_CART);
   const [isOpen, setIsOpen] = useState(false);
-  const [hydrated, setHydrated] = useState(false);
-
-  // Hydrate from localStorage
-  useEffect(() => {
-    setItems(loadCart());
-    setHydrated(true);
-  }, []);
-
-  // Persist to localStorage
-  useEffect(() => {
-    if (hydrated) {
-      saveCart(items);
-    }
-  }, [items, hydrated]);
 
   const addItem = useCallback(
     (item: Omit<CartItem, "quantity">) => {
@@ -103,7 +113,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const clearCart = useCallback(() => {
-    setItems([]);
+    setItems(() => []);
   }, []);
 
   const totalItems = items.reduce((sum, i) => sum + i.quantity, 0);

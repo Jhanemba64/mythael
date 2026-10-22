@@ -1,4 +1,4 @@
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ProductCard } from "@/components/shop/product-card";
 import { Shield, Sparkles, Gem, Truck, Lock } from "lucide-react";
@@ -35,7 +35,6 @@ function HomePageClient({
 }) {
   const t = useTranslations("home");
   const tTrust = useTranslations("trust");
-  const locale = useLocale();
 
   const categories = [
     {

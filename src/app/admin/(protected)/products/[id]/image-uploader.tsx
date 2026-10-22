@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { updateProductImagesAction } from "@/app/actions/products";
-import { Button } from "@/components/ui/button";
 import { Upload, X } from "lucide-react";
 
 type Props = {

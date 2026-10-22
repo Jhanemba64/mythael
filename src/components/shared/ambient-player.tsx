@@ -1,12 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { Volume2, VolumeX, Music } from "lucide-react";
+
+// true on the client only: the player is not rendered on the server
+const noSubscribe = () => () => {};
 
 export function AmbientPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(noSubscribe, () => true, () => false);
   const [showHint, setShowHint] = useState(false);
 
   useEffect(() => {
@@ -15,7 +18,6 @@ export function AmbientPlayer() {
     audio.volume = 0.3;
     audioRef.current = audio;
 
-    setMounted(true);
     const wantsMusic = localStorage.getItem("mythael-music") !== "off";
 
     function startPlayback() {

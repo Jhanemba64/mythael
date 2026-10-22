@@ -1,6 +1,6 @@
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { db } from "@/db";
-import { products, categories } from "@/db/schema";
+import { products } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { ProductCard } from "@/components/shop/product-card";
 import { CategoryFilter } from "@/components/shop/category-filter";

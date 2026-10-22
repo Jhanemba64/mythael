@@ -1,7 +1,7 @@
 "use server";
 
 import { db } from "@/db";
-import { products, categories } from "@/db/schema";
+import { products } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
@@ -50,7 +50,7 @@ export async function createProductAction(formData: FormData) {
     });
     revalidatePath("/admin/products");
     return { success: true };
-  } catch (err) {
+  } catch {
     return { success: false, error: "Failed to create product" };
   }
 }

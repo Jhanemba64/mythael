@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { Link, useRouter } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./locale-switcher";
 import { useCart } from "@/components/cart/cart-provider";
-import { ShoppingBag, Menu, User, LogOut, ClipboardList } from "lucide-react";
+import { ShoppingBag, Menu, LogOut, ClipboardList } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { logoutAction } from "@/app/actions/auth";

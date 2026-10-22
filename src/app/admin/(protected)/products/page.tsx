@@ -1,5 +1,5 @@
 import { db } from "@/db";
-import { products, categories } from "@/db/schema";
+import { products } from "@/db/schema";
 import { desc } from "drizzle-orm";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
@@ -12,7 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Plus, Pencil, Trash2 } from "lucide-react";
+import { Plus, Pencil } from "lucide-react";
 import { DeleteProductButton } from "./[id]/delete-button";
 
 async function getProducts() {
