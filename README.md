@@ -118,7 +118,7 @@ et Dependabot propose chaque mois les mises à jour mineures et correctives.
 |---------|-------|
 | `dev` | Developpement quotidien |
 | `preprod` | Tests avant mise en production |
-| `main` | Production — Vercel deploie automatiquement |
+| `main` | Production — déploiements Vercel automatiques désactivés (`vercel.json`) depuis le retrait du site |
 
 ---
 
