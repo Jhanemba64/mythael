@@ -1,6 +1,8 @@
 # Mythael — Handcrafted Fantasy Creations
 
-Site e-commerce fantasy avec sytème de paiement via Stripe. Figurines, bijoux et accessoires JDR "artisanaux".
+[![CI](https://github.com/Jhanemba64/mythael/actions/workflows/ci.yml/badge.svg)](https://github.com/Jhanemba64/mythael/actions/workflows/ci.yml)
+
+Site e-commerce fantasy avec système de paiement via Stripe. Figurines, bijoux et accessoires JDR "artisanaux".
 
 > ⚠️ **Site retiré de la production.** Le projet ne sera pas déployé publiquement : on ne met pas en ligne un site avec un vrai système de paiement (Stripe) sans cadre légal/commercial. Le code reste disponible à titre de démonstration et de tests en local.
 
@@ -101,6 +103,15 @@ git push                        # Vercel deploie automatiquement depuis main
 
 ---
 
+## Intégration continue
+
+Chaque push sur `main` et chaque pull request passent par le workflow [`ci.yml`](.github/workflows/ci.yml) :
+ESLint, vérification des types TypeScript, build Next.js, puis audit des dépendances de production
+(bloquant sur les failles élevées et critiques). Les actions GitHub sont épinglées par SHA de commit
+et Dependabot propose chaque mois les mises à jour mineures et correctives.
+
+---
+
 ## Branches
 
 | Branche | Usage |
@@ -179,3 +190,9 @@ Les liens d'achat sont dans `src/db/seed.ts` en commentaires a cote de chaque pr
 
 Musique d'ambiance : "Ravi de te revoir" par YannZ — Licence CC-BY 4.0
 https://yannz41.itch.io
+
+---
+
+## Licence
+
+Code sous licence [MIT](LICENSE). La musique d'ambiance reste sous licence CC-BY 4.0 (voir ci-dessus).

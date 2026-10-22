@@ -1,0 +1,53 @@
+# Intégration continue : qualité du code, build et audit des dépendances de production.
+# Les actions sont épinglées par SHA de commit (Dependabot les met à jour).
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Lint, types, build et audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Installation des dépendances
+        run: npm ci
+
+      - name: ESLint
+        run: npm run lint
+
+      - name: Vérification des types
+        run: npx tsc --noEmit
+
+      # Valeurs factices : toutes les pages sont rendues à la demande, le build
+      # n'interroge ni la base ni Stripe
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+          DATABASE_URL: postgresql://ci:ci@localhost:5432/ci
+          ADMIN_JWT_SECRET: ci-build-only-secret-0123456789abcdef
+
+      # Bloquant sur les failles élevées et critiques des dépendances livrées avec le site
+      - name: Audit des dépendances de production
+        run: npm audit --omit=dev --audit-level=high
